@@ -1,0 +1,40 @@
+py manage.py shell
+from brands.models import Brand
+ 
+
+
+1) En birinci brand obyektini goturun.
+
+
+Brand.objects.first()
+
+
+
+
+2) En sonuncu productu goturun. Daha sonra hemin productun brandinin adini ekrana cap edin.
+
+
+Product.objects.last()   
+product.brand
+
+
+
+
+3) Yeni bir magaza yaradin. Ve butun productlari hemin magazaya elave edin.
+
+new_store=Store.objects.create(name="NewCAr Store")
+>>> new_store.products.add(1)
+>>> new_store.products.add(2)
+>>> new_store.products.add(3) 
+>>> new_store.products.add(4) 
+>>> new_store.products.all()
+VE YA 
+new_store.products.set([1,2,3,4])
+
+
+4) Butun magazalarin productlarini sifirlayin.
+new_store.products.clear()
+
+
+5) Yeni brand yaradin. Ve butun productlarin brandini bu brandle evez edin
+new_brand=Brand.objects.create(name="Ferrari")
